@@ -1,19 +1,22 @@
-import BookList from "./components/BookList";
-import Navbar from "./components/Navbar";
+import React from "react";
+import Booklist from "./components/BookList";
 import ThemeToggle from "./components/ThemeToggle";
-import AuthContextProvider from "./contexts/AuthContext";
+import SongList from "./components/SongList";
+import Navbar from "./components/Navbar";
 import ThemeContextProvider from "./contexts/ThemeContext";
+import AuthContextProvider from "./contexts/AuthContext";
 
 function App() {
   return (
     <div className="App">
-      <ThemeContextProvider>
-        <AuthContextProvider>
+      <AuthContextProvider>
+        <ThemeContextProvider>
           <Navbar />
-          <BookList />
+          <Booklist />
           <ThemeToggle />
-        </AuthContextProvider>
-      </ThemeContextProvider>
+          <SongList />
+        </ThemeContextProvider>
+      </AuthContextProvider>
     </div>
   );
 }
